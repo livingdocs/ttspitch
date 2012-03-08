@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<head>
+<script src="http://cdn.popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+<script src="js/instapoppin.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    var pop = Popcorn("#amir");
+    
+pop.wikipedia({
+id:'',
+start:'1',
+end:'6',
+lang:'en',
+src:'http://en.wikipedia.org/wiki/Amir_Bar-Lev',
+title:'Amir Bar Lev',
+numberofwords:'75',
+target:'insidebox'});
+
+pop.image({
+id:'',
+start:'6',
+end:'10',
+src:'img/tts.png',
+target:'insidebox'});
+
+pop.footnote({
+id:'',
+start:'10',
+end:'11',
+text:'Transmedia documentary.',
+target:'insidebox'});
+
+pop.footnote({
+id:'',
+start:'11',
+end:'12',
+text:'Made for the web.',
+target:'insidebox'});
+
+pop.webpage({
+id:'',
+start:'12',
+end:'26',
+src:"http://tillmanstory.com/site/",
+target:'webpage'});
+
+pop.webpage({
+id:'',
+start:'26',
+end:'28',
+src:"http://documentcloud.org",
+target:'webpage'});
+
+pop.webpage({
+id:'',
+start:'28',
+end:'35',
+src:"http://popcornjs.org",
+target:'webpage'});
+
+pop.image({
+id:'',
+start:'35',
+end:'38',
+src:'img/01.jpg',
+target:'webpage'});
+
+pop.image({
+id:'',
+start:'38',
+end:'41',
+src:'img/02.jpg',
+target:'webpage'});
+
+pop.image({
+id:'',
+start:'41',
+end:'44',
+src:'img/03.jpg',
+target:'webpage'});
+
+pop.image({
+id:'',
+start:'44',
+end:'47',
+src:'img/06.jpg',
+target:'webpage'});
+
+pop.image({
+id:'',
+start:'47',
+end:'50',
+src:'img/07.jpg',
+target:'webpage'});
+
+pop.image({
+id:'',
+start:'50',
+end:'59',
+src:'img/09.jpg',
+target:'webpage'});
+
+pop.image({
+id:'',
+start:'76',
+end:'95',
+src:'img/goff.jpg',
+target:'insidebox'});
+
+pop.wikipedia({
+id:'',
+start:'76',
+end:'95',
+lang:'en',
+src:'http://en.wikipedia.org/wiki/Stan_Goff',
+title:'Stan Goff',
+numberofwords:'75',
+target:'insidebox'});
+  
+pop.webpage({
+id:'',
+start:'96',
+end:'97',
+src:"http://www.youtube.com/v/ETrXu-w7xwk",
+target:'full'});
+
+pop.image({
+id:'',
+start:'97',
+end:'122',
+src:'img/tts.png',
+target:'insidebox'});
+
+pop.image({
+id:'',
+start:'122',
+end:'140',
+src:'img/dayafter.jpg',
+target:'webpage'});
+
+pop.footnote({
+id:'',
+start:'140',
+end:'164',
+text:'Get Involved',
+target:'insidebox'});
+
+      }, false);
+      
+      $pop.cue( 59, function() {
+  this.pause();
+  var that = this;
+  spawn = document.getElementById("spawn");
+  spawn.addEventListener( "ended", function() {
+    spawn.pause();
+    that.play();
+  }, false );
+  spawn.play();
+  
+  });
+
+    </script>
+        
+</head>
+<body>
+
+<p class="header">Tillman Story Interactive</p>
+	
+	<div class="supercontainer">
+	<div class="container">
+	
+	
+<!--main video--!>		
+
+		<video id="amir" controls data-active-during="12-76, 96-97, 122-140">
+  			<source src="http://videos.mozilla.org/serv/webmademovies/vabl.webm">
+		</video>
+
+<!--spawned video--!>		
+
+	<div id="full" data-active-during="59-76">
+		<video id="spawn" width="720" height="480" controls >
+  			<source src="http://videos.mozilla.org/serv/webmademovies/excerpt.webm">
+		</video>
+	</div>
+	
+<!--display box to the right--!>		
+		<div id="box">
+			<div id="insidebox">
+			
+			</div>
+		</div>
+
+	</div>	
+	</div>	
+
+<!--webpage background--!>		
+
+	<div id="webpage">
+	</div>
+
+</body>
+</html>
