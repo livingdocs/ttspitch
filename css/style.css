@@ -1,21 +1,23 @@
 body {
-	background-color:black;
+	background-color:#fff;
 }
 iframe {
 	width: 100%
 	height: 480px;
 }
 p {
-	color: #fff;
+	color: #000;
 	font-size: 20px;
 }
 a {
-	color: #fff;
+	color: #000;
 	font-size: 30px;
 }
 #amir {
 	width: 50%;
 	position: absolute;
+	top: 0px;
+	left: 0px;
 	z-index: 2;
 	transition: width 2s, height 2s, transform 2s;
 	-moz-transition: width 2s, height 2s, -moz-transform 2s;
@@ -31,32 +33,26 @@ a {
 	color: red;
 	position: absolute;
 }
-.supercontainer {
-	display:block;
-	width: 95%;
-	position: absolute;
-	margin-top: 50px;
-}
 .container {
-	width: 1200px;
+	width: 100%;
 	display: block;
 	margin: 0px auto;
 }
 #webpage {
-	width: 900px;
+	width: 98%;
 	height: 600px;
 	position: absolute;
+	margin: 0px auto;
 	z-index: -1;
-	top: 25px;
-	left: 300px;
 	transition: width 2s, height 2s, transform 2s;
 	-moz-transition: width 2s, height 2s, -moz-transform 2s;
 	-webkit-transition: width 2s, height 2s, -webkit-transform 2s;
 	-o-transition: width 2s, height 2s,-o-transform 2s;
 }
 #full {
-	position: absolute;
-	left: 330px;
+	position: relative;
+	float: right;
+	width: 65%;
 	z-index: 3;
 	display: none;
 	transition: width 2s, height 2s, transform 2s;
@@ -68,23 +64,20 @@ a {
 	display: block;
 }
 #box {
-	width: 500px;
+	width: 50%;
 	height: 500px;
 	float: right;
+	margin: 0px auto;
+	display: block;
+	color: #000;
+	font-size: 25px;
+	overflow: hidden;
 	transition: width 2s, height 2s, transform 2s;
 	-moz-transition: width 2s, height 2s, -moz-transform 2s;
 	-webkit-transition: width 2s, height 2s, -webkit-transform 2s;
 	-o-transition: width 2s, height 2s,-o-transform 2s;
 }
 #insidebox {
-	width: 450px;
-	height: 450px;
-	margin: 0px auto;
-	display: block;
-	color: #fff;
-	overflow: hidden;
-	transition: width 2s, height 2s, transform 2s;
-	-moz-transition: width 2s, height 2s, -moz-transform 2s;
-	-webkit-transition: width 2s, height 2s, -webkit-transform 2s;
-	-o-transition: width 2s, height 2s,-o-transform 2s;
+	width: 90%;
+	float: right;
 }
