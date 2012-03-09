@@ -63,6 +63,20 @@ a {
 #full.active {
 	display: block;
 }
+#full2 {
+	position: relative;
+	float: right;
+	width: 65%;
+	z-index: 3;
+	display: none;
+	transition: width 2s, height 2s, transform 2s;
+	-moz-transition: width 2s, height 2s, -moz-transform 2s;
+	-webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+	-o-transition: width 2s, height 2s,-o-transform 2s;
+}
+#full2.active {
+	display: block;
+}
 #box {
 	width: 50%;
 	height: 500px;

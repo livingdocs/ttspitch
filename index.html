@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <head>
+<link rel="stylesheet" href="css/style.css" />
+<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/c/video.js"></script>
 <script src="http://cdn.popcornjs.org/code/dist/popcorn-complete.min.js"></script>
 <script src="js/instapoppin.js"></script>
-<link rel="stylesheet" href="css/style.css" />
 
 <script>
 
@@ -129,7 +131,7 @@ target:'full'});
 
 pop.image({
 id:'',
-start:'97',
+start:'99',
 end:'122',
 src:'img/tts.png',
 target:'insidebox'});
@@ -148,19 +150,29 @@ end:'164',
 text:'Get Involved',
 target:'insidebox'});
 
+pop.footnote({
+id:'',
+start:'140',
+end:'164',
+text:'info@axisfilms.net',
+target:'insidebox'});
+
+pop.listen('play', function() {
+	var spawns = ['spawn1', 'spawn2'], i, spawn;
+	for (i = 0; i < spawns.length; i++) {
+		spawn = spawns[i];
+		spawn = document.getElementById(spawn + '_html5_api') ||
+			document.getElementById(spawn);
+		spawn.pause();		
+	}
+}, true);
+pop.currentTime(90);
+pop.cue(96, function() {
+	pop.pause();
+});
+
       }, false);
       
-      $pop.cue( 59, function() {
-  this.pause();
-  var that = this;
-  spawn = document.getElementById("spawn");
-  spawn.addEventListener( "ended", function() {
-    spawn.pause();
-    that.play();
-  }, false );
-  spawn.play();
-  
-  });
 
     </script>
         
@@ -172,17 +184,30 @@ target:'insidebox'});
 	
 <!--main video--!>		
 
-		<video id="amir" controls data-active-during="12-76, 96-97, 122-140">
-  			<source src="http://videos.mozilla.org/serv/webmademovies/vabl.webm">
+		<video id="amir" controls data-active-during="12-76, 122-140" preload="auto">
+  			<source src="http://videos.mozilla.org/serv/webmademovies/vabl.webm" type='video/webm'>
+  			<source src="http://videos.mozilla.org/serv/webmademovies/vabl.mp4" type='video/mp4'>
 		</video>
 
-<!--spawned video--!>		
+<!--spawned videos--!>		
 
 	<div id="full" data-active-during="59-76">
-		<video id="spawn" width="720" height="480" controls >
-  			<source src="http://videos.mozilla.org/serv/webmademovies/excerpt.webm">
+		<video id="spawn1" width="720" height="480" controls preload="auto" class="video-js vjs-default-skin" data-setup="{}" poster="video/till.png">
+  			<source src="http://videos.mozilla.org/serv/webmademovies/excerpt.webm" type='video/webm'>
+  			<source src="http://videos.mozilla.org/serv/webmademovies/excerpt.mp4" type='video/mp4'>
 		</video>
 	</div>
+	
+	<!-- add Goff in later.
+	
+		<div id="full2" data-active-during="96-97">
+		<video id="spawn2" width="720" height="480" controls preload="auto" class="video-js vjs-default-skin" data-setup="{}" poster="video/goff.png" >
+  			<source src="http://videos.mozilla.org/serv/webmademovies/goff.webm" type='video/webm'>
+  			<source src="http://videos.mozilla.org/serv/webmademovies/goff.mp4" type='video/mp4'>
+		</video>
+	</div>
+	
+	--!>
 	
 <!--display box to the right--!>		
 		<div id="box">
